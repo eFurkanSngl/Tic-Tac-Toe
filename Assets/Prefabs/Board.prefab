@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2174865220673678891}
   - component: {fileID: 2382707018478573656}
   m_Layer: 5
-  m_Name: PrGrid
+  m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
