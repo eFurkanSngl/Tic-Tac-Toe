@@ -10,7 +10,7 @@ public class Cell : MonoBehaviour
     public Button btn;
     public Main main;  // Main Tipinde main değişkeni
 
-    public void Fill()
+    public void Fill()  // Gridi Doldurma 
     {
         btn.interactable = false;  // butonu etkileşime Kapama 
 

@@ -15,11 +15,16 @@ public class Main : MonoBehaviour
      // Parametre aldığı için bu sınıfın tipinden burada cağırıyoruz.
     }
 
-    public void Switch()
+    public void Switch() // harfleri değiştiren metod
     {
         xTurnCount++; // her sefer bir artmasını istiyorum.
         xTurn = !xTurn;  // Ünlem işareti onu tam tersine çevirir.
 
+        bool hasWinner = board.CheckForWinner();
+        if (hasWinner)
+        {
+            Debug.Log("Winneer!!!");
+        }
     }
 
     public string GetTurnCharacter()

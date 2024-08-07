@@ -22,4 +22,59 @@ public class Board : MonoBehaviour
     }
   }
 
+  public bool CheckForWinner()
+  {
+    int i = 0;
+    for(i = 0; i<=6;i+=3)
+    {
+      if (!CheckValues(i,i+1))
+      {
+        continue;
+      }
+
+      if (!CheckValues(i,i+2))
+      {
+        continue;
+      }
+      return true;
+    }
+
+    for (i = 0; i <= 2; i++)
+    {
+      if (!CheckValues(i,i+3))
+      {
+        continue;
+      }
+
+      if (!CheckValues(i,i+6))
+      {
+        continue;
+      }
+
+      return true;
+    }
+    
+    return false;
+  }
+
+  public bool CheckValues(int firstIndex, int secondIndex)
+  {
+    string firstValue = _cells[firstIndex].label.text;
+    string secondValue = _cells[secondIndex].label.text;
+
+    if (firstValue == "" || secondValue == "" )
+    {
+      return false;
+    }
+
+    if (firstValue == secondValue)
+    {
+      return true;
+    }
+    else
+    {
+      return false; 
+    }
+    
+  }
 }
