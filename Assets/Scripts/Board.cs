@@ -22,11 +22,21 @@ public class Board : MonoBehaviour
     }
   }
 
+  public void Reset()
+  {
+    foreach (Cell cell in _cells )
+    {
+      cell.label.text = "";
+      cell.btn.interactable = true;
+    }
+  }
+
   public bool CheckForWinner()
   {
     int i = 0;
     for(i = 0; i<=6;i+=3)
     {
+      // Horizontal
       if (!CheckValues(i,i+1))
       {
         continue;
@@ -38,7 +48,7 @@ public class Board : MonoBehaviour
       }
       return true;
     }
-
+    // Vertical
     for (i = 0; i <= 2; i++)
     {
       if (!CheckValues(i,i+3))
@@ -53,6 +63,20 @@ public class Board : MonoBehaviour
 
       return true;
     }
+    // left Diagonal
+    if (CheckValues(0,4)&& CheckValues(0,8))
+      // yani 0 ilk kare oluyor 4 tane ileri gidersek tam ortadaki çapraz oluyor
+    // 8 tane sağ en üst capraz oluyor
+    {
+      return true;
+    }
+    // right diagonal
+    if (CheckValues(2,4)&& CheckValues(2,8))
+      // 2 yapma sebebim sağdan kontrol edicez
+    {
+      return true;
+    }
+    
     
     return false;
   }
