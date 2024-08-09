@@ -31,7 +31,7 @@ public class Board : MonoBehaviour
     }
   }
 
-  public bool CheckForWinner()
+  public bool CheckForWinner() // kazananı kontrol ediyoruz
   {
     int i = 0;
     for(i = 0; i<=6;i+=3)
@@ -58,7 +58,7 @@ public class Board : MonoBehaviour
 
       if (!CheckValues(i,i+6))
       {
-        continue;
+        continue; 
       }
 
       return true;
@@ -71,7 +71,7 @@ public class Board : MonoBehaviour
       return true;
     }
     // right diagonal
-    if (CheckValues(2,4)&& CheckValues(2,8))
+    if (CheckValues(2,4)&& CheckValues(2,6))
       // 2 yapma sebebim sağdan kontrol edicez
     {
       return true;
